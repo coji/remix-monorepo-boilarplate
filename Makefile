@@ -19,6 +19,8 @@ endif
 # envファイルを設定
 env:
 	if [ ! -f .env ]; then cp .env.example .env; fi
+	if [ ! -f apps/admin/.env ]; then ln -s ../../.env apps/admin/.env; fi
+	if [ ! -f apps/web/.env ]; then ln -s ../../.env apps/web/.env; fi
 	if [ ! -f packages/database/.env ]; then ln -s ../../.env packages/database/.env; fi
 
 
