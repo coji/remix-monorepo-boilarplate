@@ -1,0 +1,33 @@
+{
+  "name": "database",
+  "version": "0.0.0",
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push --skip-generate",
+    "dev": "tsup src --watch",
+    "build": "tsup src"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.14.1"
+  },
+  "devDependencies": {
+    "prisma": "^4.14.1",
+    "tsup": "^6.7.0"
+  }
+}
