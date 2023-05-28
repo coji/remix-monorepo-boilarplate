@@ -1,11 +1,26 @@
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
-  extends: ["next", "turbo", "prettier"],
-  rules: {
-    "@next/next/no-html-link-for-pages": "off",
-  },
+  extends: [
+    "@remix-run/eslint-config",
+    "@remix-run/eslint-config/node",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier",
+  ],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    babelOptions: {
-      presets: [require.resolve("next/babel")],
-    },
+    tsconfigRootDir: __dirname,
+    project: ["./tsconfig.json"],
   },
+  plugins: ["@typescript-eslint"],
+  rules: {
+    semi: ["error", "never"],
+  },
+  overrides: [
+    {
+      files: ["**/*.ts"],
+      rules: { "@typescript-eslint/no-floating-promises": "error" },
+    },
+  ],
+  ignorePatterns: ["node_modules", "dist", "build", "public/build"],
 };
