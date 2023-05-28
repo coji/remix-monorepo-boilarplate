@@ -15,12 +15,12 @@ module.exports = {
   plugins: ["@typescript-eslint"],
   rules: {
     semi: ["error", "never"],
+    "@typescript-eslint/no-floating-promises": [
+      "warn",
+      {
+        ignoreIIFE: true,
+      },
+    ],
   },
-  overrides: [
-    {
-      files: ["**/*.ts"],
-      rules: { "@typescript-eslint/no-floating-promises": "error" },
-    },
-  ],
   ignorePatterns: ["node_modules", "dist", "build", "public/build"],
 };
