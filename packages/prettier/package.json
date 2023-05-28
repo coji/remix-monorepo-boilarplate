@@ -1,0 +1,11 @@
+{
+  "name": "@app/prettier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.json",
+  "license": "MIT",
+  "dependencies": {
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "prettier-plugin-tailwindcss": "^0.3.0"
+  }
+}
