@@ -1,20 +1,11 @@
-NPM_EXISTS := $(shell command -v npm 2> /dev/null)
-PNPM_EXISTS := $(shell command -v pnpm 2> /dev/null)
 
 # 初期の開発環境(ローカル)設定
 setup: env
-ifeq ($(NPM_EXISTS),) # npm が存在し、かつ、pnpmが存在しない場合はpnpm をインストール
-	@echo "npm コマンドが存在しません。"
-else ifeq ($(PNPM_EXISTS),)
-	npm i -g pnpm
-endif
-ifeq ($(PNPM_EXISTS),) # pnpm が存在する場合は admin, crawler の node パッケージをインストール (vscode用)
-	@echo "pnpm コマンドが存在しません。"
-else
-	docker compose up -d db
+	corepack enable
+	corepack prepare pnpm@latest --activate
+	docker compose up -d --wait
 	pnpm i --frozen-lockfile
 	pnpm run -r setup
-endif
 
 
 # envファイルを設定
@@ -38,7 +29,7 @@ reset: clean setup
 
 # ローカル開発サーバを起動
 dev:
-	docker compose up -d db
+	docker compose up -d db --wait
 	pnpm turbo dev
 
 

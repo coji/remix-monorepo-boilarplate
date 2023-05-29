@@ -1,18 +1,20 @@
 {
+  "name": "pnpm-prisma-monorepo",
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "clean": "rimraf node_modules",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint"
   },
   "devDependencies": {
     "@turbo/gen": "^1.9.9",
     "eslint": "^8.41.0",
     "eslint-config": "workspace:*",
     "prettier": "^2.8.8",
+    "prettier-config": "workspace:*",
+    "rimraf": "^5.0.1",
     "turbo": "^1.9.9"
-  },
-  "packageManager": "pnpm@7.15.0",
-  "name": "pnpm-prisma-monorepo"
+  }
 }

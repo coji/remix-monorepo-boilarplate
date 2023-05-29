@@ -5,7 +5,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
-    "clean": "rimraf .turbo node_modules",
+    "clean": "rimraf build public/build .cache .turbo node_modules",
     "deploy": "fly deploy --remote-only",
     "dev": "remix dev --port 3001",
     "start": "remix-serve build",
