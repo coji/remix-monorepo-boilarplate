@@ -8,10 +8,13 @@ node_modules
 # testing
 coverage
 
-# next.js
-.next/
-out/
+# dist
+dist
+
+# remix
 build
+public/build
+.cache
 
 # misc
 .DS_Store
