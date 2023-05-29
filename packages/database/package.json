@@ -18,7 +18,7 @@
   "scripts": {
     "prebuild": "pnpm run db:generate",
     "build": "tsup src",
-    "clean": "rimraf .turbo node_modules dist",
+    "clean": "rimraf dist .turbo node_modules",
     "db:generate": "prisma generate",
     "db:migrate:deploy": "prisma migrate deploy",
     "db:migrate:dev": "prisma migrate dev",
@@ -34,6 +34,7 @@
   "devDependencies": {
     "eslint-config": "workspace:*",
     "prettier-config": "workspace:*",
+    "tsconfig": "workspace:*",
     "prisma": "^4.14.1",
     "rimraf": "^5.0.1",
     "ts-node": "^10.9.1",
