@@ -1,4 +1,8 @@
 {
   "extends": "tsconfig/remix.json",
-  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "remix.config.js"]
+  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "remix.config.js", ".eslintrc.js"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": { "~/*": ["./app/*"] }
+  }
 }

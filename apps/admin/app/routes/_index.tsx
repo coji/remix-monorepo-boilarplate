@@ -1,15 +1,14 @@
 import { json, type LoaderArgs, type V2_MetaFunction } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
-import { PrismaClient } from 'database'
 import { Button } from 'ui'
+import { prisma } from '~/services/db.server'
 
-const client = new PrismaClient()
 export const meta: V2_MetaFunction = () => {
   return [{ title: 'New Remix App' }, { name: 'description', content: 'Welcome to Remix!' }]
 }
 
 export const loader = async ({ request }: LoaderArgs) => {
-  const users = await client.user.findMany({
+  const users = await prisma.user.findMany({
     select: { id: true, name: true, email: true },
   })
   return json({ users })
