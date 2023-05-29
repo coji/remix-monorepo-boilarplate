@@ -12,7 +12,8 @@ ifeq ($(PNPM_EXISTS),) # pnpm が存在する場合は admin, crawler の node �
 	@echo "pnpm コマンドが存在しません。"
 else
 	docker compose up -d db
-	pnpm i
+	pnpm i --frozen-lockfile
+	pnpm run -r setup
 endif
 
 
@@ -28,6 +29,7 @@ env:
 clean:
 	docker compose down --rmi all --volumes --remove-orphans
 	rm -Rf postgres-data data
+	pnpm run -r clean
 
 
 # 再セットアップ

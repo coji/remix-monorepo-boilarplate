@@ -5,6 +5,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
+    "clean": "rimraf .turbo node_modules",
     "deploy": "fly deploy --remote-only",
     "dev": "remix dev --port 3001",
     "start": "remix-serve build",
@@ -29,6 +30,7 @@
     "eslint": "^8.38.0",
     "eslint-config": "workspace:*",
     "prettier-config": "workspace:*",
+    "rimraf": "^5.0.1",
     "tsconfig": "workspace:*",
     "typescript": "^5.0.4"
   },
