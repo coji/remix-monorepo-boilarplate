@@ -9,5 +9,5 @@ module.exports = {
   },
   devServerPort: 8000,
   serverModuleFormat: 'cjs',
-  watchPaths: ['../../packages/database', '../../packages/ui'],
+  watchPaths: ['node_modules/database', 'node_modules/packages/ui'],
 }

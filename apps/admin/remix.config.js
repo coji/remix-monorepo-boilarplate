@@ -7,6 +7,7 @@ module.exports = {
     v2_normalizeFormMethod: true,
     v2_routeConvention: true,
   },
+  devServerPort: 8001,
   serverModuleFormat: 'cjs',
-  watchPaths: ['../../packages/database', '../../packages/ui'],
+  watchPaths: ['node_modules/database', 'node_modules/ui'],
 }
