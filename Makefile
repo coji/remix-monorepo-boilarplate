@@ -2,7 +2,7 @@
 # 初期の開発環境(ローカル)設定
 setup: env
 	corepack enable
-	corepack prepare pnpm@latest --activate
+	corepack prepare pnpm@8.5.1 --activate
 	docker compose up -d --wait
 	pnpm i --frozen-lockfile
 	pnpm run -r setup
